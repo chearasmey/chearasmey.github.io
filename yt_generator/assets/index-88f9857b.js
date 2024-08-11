@@ -1,9 +1,0 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const o of t.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();function c(u){const l=()=>{const r=document.querySelector("#youtubeLink"),i=document.querySelector("#playerNumber"),e=document.querySelector("#player");if(r.value&&i.value){const t=parseInt(i.value);let o="",n="";r.value.includes("list")?n=r.value.split("v=")[1].replace("&","?")+"&autoplay=1&mute=1":n=r.value.split("=")[1]+"?autoplay=1&mute=1";for(let a=0;a<t;a++)o+=`&nbsp;<iframe width="560" height="315" src="https://www.youtube.com/embed/${n}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;e.innerHTML=o}else alert("Please input youtube link and Total Players!")};u.addEventListener("click",()=>l())}document.querySelector("#app").innerHTML=`
-  <div>
-    <input type="text" id="youtubeLink" placeholder="Youtube link here" />
-    <input type="number" id="playerNumber" placeholder="Total Players" value="10" />
-    <button id="generateElement">Open Video</button>
-    <br><br>
-    <div id="player"></div>
-  </div>
-`;c(document.querySelector("#generateElement"));
