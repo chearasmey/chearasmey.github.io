@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-function Education({onClick}: {onClick: (e: React.MouseEvent<HTMLSpanElement>) => void}) {
+type EducationProps = {
+    onClick?: (e: React.MouseEvent<HTMLSpanElement>) => void;
+}
+function Education({onClick}: EducationProps) {
     return <>
         <motion.div className="block md:hidden bg-amber-50 mb-[50px] pb-3 h-screen"
         initial={{ width: 0 }}

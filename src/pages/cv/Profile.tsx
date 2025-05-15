@@ -1,7 +1,7 @@
 
 import '../../assets/css/profile.css';
 interface ProfileProps {
-    handleContactMeBtn: () => void;
+    handleContactMeBtn?: () => void;
 }
 function Profile({handleContactMeBtn}: ProfileProps) {
     return <>

@@ -1,6 +1,9 @@
 import Chips from "../../components/Chips";
 import {motion} from "framer-motion";
-function Skill({onClick}: {onClick: (e: React.MouseEvent<HTMLSpanElement>) => void}) {
+type SkillProps = {
+    onClick?: (e: React.MouseEvent<HTMLSpanElement>) => void;
+}
+function Skill({onClick}: SkillProps) {
     const otherTools = ["Git", "SonarQube", "Linx", "Docker", "Nginx", "Jenkins", "Kubernetes", "Terraform", "Ansible", "Figma", "Webflow"];
     const projectManagementTools = ["Jira Software", "ClicUp Software", "Agile Scrum"];
     const programmingLanguages = ["HTML", "CSS", "SASS", "JavaScript", "TypeScript", "PHP", "Java", "Node", "Python", "Dart", ];

@@ -107,7 +107,7 @@ function CV() {
             <Profile handleContactMeBtn={()=>handleContactMeBtn()} />
           </div>
 
-          <div className="book-page page-right turn" id="turn-1" ref={(element: HTMLDivElement) => (itemRefs.current[0] = element)}>
+          <div className="book-page page-right turn" id="turn-1" ref={(element: HTMLDivElement) => void (itemRefs.current[0] = element)}>
             {/* page 1 (work experience) */}
             <div className="page-front">
               <h1 className="title uppercase font-bold">Work Experience</h1>
@@ -167,7 +167,7 @@ function CV() {
           </div>
 
           {/* page 2 (education) */}
-          <div className="book-page page-right turn" id="turn-2" ref={(element: HTMLDivElement) => (itemRefs.current[1] = element)}>
+          <div className="book-page page-right turn" id="turn-2" ref={(element: HTMLDivElement) => void (itemRefs.current[1] = element)}>
             <div className="page-front">
               <Education onClick={() => handleNextPrevBtn("turn-2", 2)} />
             </div>
@@ -179,7 +179,7 @@ function CV() {
           </div>
 
           {/* page 3 (skills) */}
-          <div className="book-page page-right turn" id="turn-3" ref={(element: HTMLDivElement) => (itemRefs.current[2] = element)}>
+          <div className="book-page page-right turn" id="turn-3" ref={(element: HTMLDivElement) => void (itemRefs.current[2] = element)}>
             <div className="page-front">
               <Skill onClick={() => handleNextPrevBtn("turn-3", 3)} />
             </div>
