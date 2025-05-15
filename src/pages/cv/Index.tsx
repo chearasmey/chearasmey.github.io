@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Skill from './Skill';
 import Contact from './Contact';
 import Course from './Course';
@@ -7,6 +8,7 @@ import Profile from './Profile';
 import { motion } from 'framer-motion';
 
 function CV() {
+    const navigate = useNavigate();
     const itemRefs = useRef<HTMLDivElement[]>([]);
     const coverRightRef = useRef<HTMLDivElement>(null);
     const profileRef = useRef<HTMLSpanElement>(null);
@@ -40,6 +42,10 @@ function CV() {
           }, 500);
         }, (index + 1) * 200 + 100);
       });
+    }
+
+    const handleContactPage = () => {
+      navigate("/contact");
     }
     
     useEffect(() => {
@@ -96,7 +102,7 @@ function CV() {
       animate={{ width: "100%" }}	 
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
       >
-        <Profile />
+        <Profile handleContactMeBtn={()=>handleContactPage()} />
       </motion.div>
       <div className="wrapper">
         <div className="cover cover-left"></div>
